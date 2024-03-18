@@ -36,6 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   String decryptedPassword = '';
   bool isCrypted = false;
 
+
+  //Cifrado y descifrado 
   void _encryptData() {
     final key = encrypt.Key.fromUtf8('my32lengthsupersecretnooneknows1');
     final iv = encrypt.IV.fromUtf8('thisisiv12345678');
@@ -71,8 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
     } catch (error) {
       print('Error al descifrar: $error');
     }
-  }
+  }//Cifrado y descifrado 
 
+  // Funcion para limpiar el formulario
   void _clearData() {
     setState(() {
       _userController.clear();
@@ -87,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  @override
+  @override // Contenido de la aplicacion
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
